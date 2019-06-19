@@ -1,0 +1,7 @@
+config/db.json
+config/redis.json
+gateway/config
+*.exe
+gateway/*.exe
+micro
+gateway/gateway_micro
