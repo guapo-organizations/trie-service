@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/guapo-organizations/go-micro-secret/frame_tool"
 	grpc_service_info "github.com/guapo-organizations/go-micro-secret/frame_tool/service"
+	"github.com/guapo-organizations/trie-service/lib"
 	pb "github.com/guapo-organizations/trie-service/proto/trie"
 	myservice "github.com/guapo-organizations/trie-service/service"
 	"google.golang.org/grpc"
@@ -19,6 +20,10 @@ func main() {
 	}
 
 	my_frame_tool.Run()
+
+	//初始化所有的字典树
+	lib.InitTrit()
+	
 	service_info := grpc_service_info.GetGrpcServiceInfo()
 
 	//tls配置
