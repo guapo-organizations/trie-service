@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package trie;
+
+//字典树服务
+service Trie {
+    //关键字提示搜索
+    rpc KeySearch (KeySearchTrieRequest) returns (KeySearchTrieResponse) {
+    }
+}
+
+//字典树类型，这个字典树是那个功能搜索的
+message TrieType {
+    //记录id
+    int64 id = 1;
+    //记录的描述
+    string trie_describe = 2;
+}
+
+//搜索关键词请求
+message KeySearchTrieRequest {
+    //搜索字典的树
+    TrieType trie_type = 1;
+    //关键词
+    string key = 2;
+    //关键词是否录取
+    bool key_enroll = 3;
+}
+
+//搜索关键词提示响应
+message KeySearchTrieResponse {
+    repeated string key_list = 1;
+}
