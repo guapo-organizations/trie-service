@@ -39,6 +39,7 @@ func run() error {
 	opts := []grpc.DialOption{grpc.WithTransportCredentials(creds)}
 
 	err = gw.RegisterTrieHandlerFromEndpoint(ctx, mux, fmt.Sprintf("%s:%s", gate_way_service_info.Ip, gate_way_service_info.Port), opts)
+
 	if err != nil {
 		return err
 	}
