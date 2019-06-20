@@ -35,8 +35,8 @@ func main() {
 			Id:           1,
 			TrieDescribe: "测试字典树",
 		},
-		Key:       "胡",
-		KeyEnroll: false,
+		Key:       "梁宇",
+		KeyEnroll: true,
 	})
 
 	if err != nil {
