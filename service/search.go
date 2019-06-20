@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"github.com/guapo-organizations/trie-service/lib"
 	"github.com/guapo-organizations/trie-service/proto/trie"
 )
@@ -19,6 +20,9 @@ func (this *TrieService) KeySearch(ctx context.Context, request *trie.KeySearchT
 		callback = nil
 	}
 
+	if request.TrieType == nil {
+		return nil,fmt.Errorf("该搜索功能没注册哦，请联系管理员");
+	}
 	//搜索结果
 	search_result, err := lib.Search(lib.TrieType{
 		TrieId:   request.TrieType.Id,

@@ -9,8 +9,7 @@ service Trie {
     //关键字提示搜索
     rpc KeySearch (KeySearchTrieRequest) returns (KeySearchTrieResponse) {
         option (google.api.http) = {
-            post : "/zldz/trie/keysearch"
-            body : "*"
+            get : "/zldz/trie/keysearch"
         };
     }
 }

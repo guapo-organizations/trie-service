@@ -16,7 +16,7 @@
   ],
   "paths": {
     "/zldz/trie/keysearch": {
-      "post": {
+      "get": {
         "summary": "关键字提示搜索",
         "operationId": "KeySearch",
         "responses": {
@@ -29,12 +29,34 @@
         },
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/trieKeySearchTrieRequest"
-            }
+            "name": "trie_type.id",
+            "description": "记录id.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "trie_type.trie_describe",
+            "description": "记录的描述.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key",
+            "description": "关键词.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key_enroll",
+            "description": "关键词是否录取.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
           }
         ],
         "tags": [
@@ -44,25 +66,6 @@
     }
   },
   "definitions": {
-    "trieKeySearchTrieRequest": {
-      "type": "object",
-      "properties": {
-        "trie_type": {
-          "$ref": "#/definitions/trieTrieType",
-          "title": "搜索字典的树"
-        },
-        "key": {
-          "type": "string",
-          "title": "关键词"
-        },
-        "key_enroll": {
-          "type": "boolean",
-          "format": "boolean",
-          "title": "关键词是否录取"
-        }
-      },
-      "title": "搜索关键词请求"
-    },
     "trieKeySearchTrieResponse": {
       "type": "object",
       "properties": {
