@@ -28,3 +28,11 @@ http://localhost:8084/zldz/trie/keysearch?trie_type.id=1&trie_type.trie_describe
 ```
 
 
+# 具体接入步骤
+
+- 联系管理员，申请一个trieType
+- 提供词库录入（非必须）
+- 调用接口  /zldz/trie/keysearch
+- 需要更新字典树的，请联系管理员重启服务，管理员比较懒，没有写crontab
+
+
