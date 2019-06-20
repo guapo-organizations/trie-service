@@ -2,10 +2,15 @@ syntax = "proto3";
 
 package trie;
 
+import "google/api/annotations.proto";
+
 //字典树服务
 service Trie {
     //关键字提示搜索
     rpc KeySearch (KeySearchTrieRequest) returns (KeySearchTrieResponse) {
+        option (google.api.http) = {
+            get : "/zldz/trie/keysearch"
+        };
     }
 }
 

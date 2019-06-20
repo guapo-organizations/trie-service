@@ -1,4 +1,4 @@
 {
-  "start": false,
+  "start": true,
   "gateway_port": "8084"
 }

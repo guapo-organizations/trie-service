@@ -1,0 +1,97 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "proto/trie/trie.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/zldz/trie/keysearch": {
+      "get": {
+        "summary": "关键字提示搜索",
+        "operationId": "KeySearch",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/trieKeySearchTrieResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "trie_type.id",
+            "description": "记录id.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "int64"
+          },
+          {
+            "name": "trie_type.trie_describe",
+            "description": "记录的描述.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key",
+            "description": "关键词.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "key_enroll",
+            "description": "关键词是否录取.",
+            "in": "query",
+            "required": false,
+            "type": "boolean",
+            "format": "boolean"
+          }
+        ],
+        "tags": [
+          "Trie"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "trieKeySearchTrieResponse": {
+      "type": "object",
+      "properties": {
+        "key_list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "title": "搜索关键词提示响应"
+    },
+    "trieTrieType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64",
+          "title": "记录id"
+        },
+        "trie_describe": {
+          "type": "string",
+          "title": "记录的描述"
+        }
+      },
+      "title": "字典树类型，这个字典树是那个功能搜索的"
+    }
+  }
+}
