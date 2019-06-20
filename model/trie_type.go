@@ -4,7 +4,7 @@ import "github.com/jinzhu/gorm"
 
 type TrieType struct {
 	gorm.Model
-	TrieDescribe int64  `gorm:"column:trie_describe"`
+	TrieDescribe string  `gorm:"column:trie_describe"`
 }
 
 //表的名字

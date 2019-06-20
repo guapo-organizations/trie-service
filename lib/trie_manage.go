@@ -28,7 +28,8 @@ func InitTrit() {
 	where_id = 0
 	for {
 		var trie_model []model.Trie
-		db.Where("id > ?", where_id).Limit(100).Find(&trie_model)
+		//预加载属性
+		db.Preload("TrieType").Where("id > ?", where_id).Limit(100).Find(&trie_model)
 
 		if trie_model == nil || len(trie_model) == 0 {
 			//没有数据了，分页结束
