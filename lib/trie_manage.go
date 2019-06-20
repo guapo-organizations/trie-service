@@ -41,7 +41,7 @@ func InitTrit() {
 
 			typeTritInitByIdAndDescribe(TrieType{
 				TrieId:   item.TrieTypeId,
-				Describe: "",
+				Describe: item.TrieType.TrieDescribe,
 			}, item.Key)
 
 			//设置id，用于分页
