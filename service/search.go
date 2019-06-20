@@ -23,7 +23,7 @@ func (this *TrieService) KeySearch(ctx context.Context, request *trie.KeySearchT
 	search_result, err := lib.Search(lib.TrieType{
 		TrieId:   request.TrieType.Id,
 		Describe: request.TrieType.TrieDescribe,
-	}, request.Key, true, callback)
+	}, request.Key, request.KeyEnroll, callback)
 
 	if err != nil {
 		return nil, err

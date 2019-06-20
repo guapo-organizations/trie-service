@@ -35,7 +35,7 @@ func main() {
 			Id:           1,
 			TrieDescribe: "测试字典树",
 		},
-		Key:       "梁宇",
+		Key:       "胡",
 		KeyEnroll: false,
 	})
 
@@ -43,5 +43,5 @@ func main() {
 		log.Fatalf("rpc发生错误: %v", err)
 	}
 
-	log.Printf("结果:%v", r)
+	log.Printf("结果:%s", r.KeyList)
 }
